@@ -11,7 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906021243) do
+ActiveRecord::Schema.define(version: 20130906022558) do
+
+  create_table "certificates", force: true do |t|
+    t.integer  "credits"
+    t.string   "topic"
+    t.string   "course_title"
+    t.datetime "date"
+    t.string   "credit_category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+  end
+
+  create_table "periods", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "state_id"
+    t.datetime "period_start"
+    t.datetime "period_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", force: true do |t|
+    t.string   "name"
+    t.integer  "lic_period"
+    t.integer  "credit_hours"
+    t.string   "credit_category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "topics", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "f_name"

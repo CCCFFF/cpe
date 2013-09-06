@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label "upload certificate here" %><br>
+    <%= f.file_field :document %>
+  </div>
   <div class="field">
     <%= f.label :credits %><br>
     <%= f.number_field :credits %>
