@@ -1,0 +1,33 @@
+<h1>Listing states</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lic period</th>
+      <th>Credit hours</th>
+      <th>Credit category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @states.each do |state| %>
+      <tr>
+        <td><%= state.name %></td>
+        <td><%= state.lic_period %></td>
+        <td><%= state.credit_hours %></td>
+        <td><%= state.credit_category %></td>
+        <td><%= link_to 'Show', state %></td>
+        <td><%= link_to 'Edit', edit_state_path(state) %></td>
+        <td><%= link_to 'Destroy', state, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New State', new_state_path %>

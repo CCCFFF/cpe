@@ -1,4 +1,6 @@
 Cpe::Application.routes.draw do
+  resources :states
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

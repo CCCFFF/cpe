@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  lic_period: 1
+  credit_hours: 1
+  credit_category: MyString
+
+two:
+  name: MyString
+  lic_period: 1
+  credit_hours: 1
+  credit_category: MyString

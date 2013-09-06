@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @state.name %>
+</p>
+
+<p>
+  <strong>Lic period:</strong>
+  <%= @state.lic_period %>
+</p>
+
+<p>
+  <strong>Credit hours:</strong>
+  <%= @state.credit_hours %>
+</p>
+
+<p>
+  <strong>Credit category:</strong>
+  <%= @state.credit_category %>
+</p>
+
+<%= link_to 'Edit', edit_state_path(@state) %> |
+<%= link_to 'Back', states_path %>
