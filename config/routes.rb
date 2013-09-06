@@ -1,4 +1,6 @@
 Cpe::Application.routes.draw do
+  resources :topics
+
   resources :states
 
   resources :users
