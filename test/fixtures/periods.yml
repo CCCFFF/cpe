@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  state_id: 1
+  period_start: 2013-09-05 21:18:53
+  period_end: 2013-09-05 21:18:53
+
+two:
+  user_id: 1
+  state_id: 1
+  period_start: 2013-09-05 21:18:53
+  period_end: 2013-09-05 21:18:53

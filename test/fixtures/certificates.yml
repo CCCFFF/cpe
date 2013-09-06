@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  credits: 1
+  topic: MyString
+  course_title: MyString
+  date: 2013-09-05 21:20:00
+  credit_category: MyString
+
+two:
+  credits: 1
+  topic: MyString
+  course_title: MyString
+  date: 2013-09-05 21:20:00
+  credit_category: MyString

@@ -1,4 +1,8 @@
 Cpe::Application.routes.draw do
+  resources :certificates
+
+  resources :periods
+
   resources :topics
 
   resources :states
