@@ -5,7 +5,7 @@ Cpe::Application.routes.draw do
 
   get "/sessions/new" => "sessions#new", as: "new_session"
   post "/sessions" => "sessions#create", as: "sessions"
-  delete "/sesisons" => "sessions#destroy"
+  delete "/sessions" => "sessions#destroy"
 
   resources :certificates
 

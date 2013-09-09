@@ -4,7 +4,9 @@
 
 
 <h3>Certificates</h3><%= link_to "Add Certificate", new_certificate_url, :class => "btn btn-info" %>
-<% if @certificates.present? %>
+
+<% certificates = Certificate.where(:user_id => @user.id) %>
+<% certificates.each do |certificate| %>
 <table>
   <thead>
     <tr>
@@ -21,8 +23,6 @@
 
   <tbody>
 
-    <% @certificates.each do |certificate| %>
-
       <tr>
         <td><%= certificate.credits %></td>
         <td><%= certificate.topic %></td>
@@ -36,7 +36,6 @@
     <% end %>
   </tbody>
 </table>
-<% end %>
 
 <p>
   <strong>F name:</strong>
