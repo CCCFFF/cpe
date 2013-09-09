@@ -4,6 +4,7 @@
 
 
 <h3>Certificates</h3>
+<% if @certificates.present? %>
 <table>
   <thead>
     <tr>
@@ -19,7 +20,9 @@
   </thead>
 
   <tbody>
+
     <% @certificates.each do |certificate| %>
+
       <tr>
         <td><%= certificate.credits %></td>
         <td><%= certificate.topic %></td>
@@ -33,6 +36,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <p>
   <strong>F name:</strong>

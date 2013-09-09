@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+
+
     @certificates = Certificate.where(:user_id => current_user.id)
   end
 
