@@ -12,35 +12,35 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :f_name %><br>
+    <%= f.label "First Name" %><br>
     <%= f.text_field :f_name %>
   </div>
   <div class="field">
-    <%= f.label :l_name %><br>
+    <%= f.label "Last Name" %><br>
     <%= f.text_field :l_name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label "Email" %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :lic_state %><br>
+    <%= f.label "State of License" %><br>
     <%= f.text_field :lic_state %>
   </div>
   <div class="field">
-    <%= f.label :lic_number %><br>
+    <%= f.label "License Number" %><br>
     <%= f.text_field :lic_number %>
   </div>
+  <!-- <div class="field"> -->
+    <!-- <%#= f.label :password %><br> -->
+    <%#= f.password_field :password %>
+  <!-- </div> -->
+  <!-- <div class="field"> -->
+    <!-- <%#= f.label :password_confirmation %><br> -->
+    <%#= f.password_field :password_confirmation %>
+  <!-- </div> -->
   <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :lic_initial_date %><br>
+    <%= f.label "License Issue Date" %><br>
     <%= f.datetime_select :lic_initial_date %>
   </div>
   <div class="actions">
