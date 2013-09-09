@@ -3,6 +3,10 @@ Cpe::Application.routes.draw do
   root "homepage#index"
   get "/homepage" => "homepage#index"
 
+  get "/sessions/new" => "sessions#new", as: "new_session"
+  post "/sessions" => "sessions#create", as: "sessions"
+  delete "/sesisons" => "sessions#destroy"
+
   resources :certificates
 
   resources :periods
