@@ -1,5 +1,39 @@
 <p id="notice"><%= notice %></p>
 
+
+
+
+<h3>Certificates</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Credits</th>
+      <th>Topic</th>
+      <th>Course title</th>
+      <th>Date</th>
+      <th>Credit category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @certificates.each do |certificate| %>
+      <tr>
+        <td><%= certificate.credits %></td>
+        <td><%= certificate.topic %></td>
+        <td><%= certificate.course_title %></td>
+        <td><%= certificate.date %></td>
+        <td><%= certificate.credit_category %></td>
+        <td><%= link_to 'Show', certificate %></td>
+        <td><%= link_to 'Edit', edit_certificate_path(certificate) %></td>
+        <td><%= link_to 'Destroy', certificate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <p>
   <strong>F name:</strong>
   <%= @user.f_name %>

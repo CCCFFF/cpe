@@ -1,4 +1,8 @@
 Cpe::Application.routes.draw do
+
+  root "homepage#index"
+  get "/homepage" => "homepage#index"
+
   resources :certificates
 
   resources :periods
@@ -49,7 +53,7 @@ Cpe::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
