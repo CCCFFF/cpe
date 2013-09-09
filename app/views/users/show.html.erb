@@ -1,17 +1,45 @@
+
+
 <p id="notice"><%= notice %></p>
 
 
+<h3>Current License Period</h3> <%= link_to "Add New License Period", new_period_url, :class => "btn btn-info" %>
+
+<% period = Period.where(:user_id => @user.id) %>
+<ul class="media-list">
+  <% period.each do |per| %>
+  <li>
+  <h5> Time Remaining</h5>
+  <% period_fin = per.period_end.to_i %>
+  <% remaining_seconds = period_fin - Time.now.to_i %>
+  <% remaining_minutes = remaining_seconds/60 %>
+  Remaining Minutes: <%= remaining_minutes  %>
+  <% remaining_hours = remaining_minutes/60 %>
+  Remaining Hours: <%= remaining_hours %>
+  <% remaining_days = remaining_hours/24 %>
+  Remaining Days: <%= remaining_days %>
+  <% remaining_months = remaining_days/30 %>
+  Remaining Months: <%= remaining_months %>
+  <% remaining_weeks = remaining_months*4 %>
+  Remaining Weeks: <%= remaining_weeks %>
+  </li>
 
 
+  <% end %>
+</ul>
 <h3>Certificates</h3><%= link_to "Add Certificate", new_certificate_url, :class => "btn btn-info" %>  <%= link_to "Add License Period", new_period_url, :class => "btn btn-info" %>
-
 <% certificates = Certificate.where(:user_id => @user.id) %>
 <% credit_total = [] %>
 <% certificates.each do |certificate| %>
+
+<% credit_total << certificate.credits.to_i %>
+<% credit_sum = credit_total.reduce(:+) %>
+<h3>Running Credit Total On <%= certificate.date.strftime("%B %e, %Y") %>: <%= credit_sum %></h3>
+<% end %>
+
+<% certificates.each do |certificate| %>
+
 <table>
-  <% credit_total << certificate.credits.to_i %>
-  <% credit_sum = credit_total.reduce(:+) %>
-  <h3>Total License Period Credits:<%= credit_sum %></h3>
   <thead>
     <tr>
       <th>Credits</th>
@@ -41,6 +69,8 @@
   </tbody>
 </table>
 <div>
+
+  <h2>Profile</h2>
 <p>
   <strong>First Name</strong>
   <%= @user.f_name %>

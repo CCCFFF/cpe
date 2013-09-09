@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909000154) do
+ActiveRecord::Schema.define(version: 20130909204249) do
 
   create_table "certificates", force: true do |t|
     t.integer  "credits"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20130909000154) do
     t.datetime "lic_initial_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "state_id"
   end
 
 end

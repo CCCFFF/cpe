@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @state = State.where(:id => :state_id)
   end
 
   # GET /users/new
@@ -70,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:f_name, :l_name, :email, :lic_state, :lic_number, :password, :password_confirmation, :lic_initial_date)
+      params.require(:user).permit(:f_name, :l_name, :email, :state_id, :lic_number, :password, :password_confirmation, :lic_initial_date)
     end
 end

@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label "State of License" %><br>
-    <%= f.text_field :lic_state %>
+    <%= f.collection_select :state_id, State.all.order("name asc"), :id, :name, :prompt => "Select a state" %>
   </div>
   <div class="field">
     <%= f.label "License Number" %><br>
