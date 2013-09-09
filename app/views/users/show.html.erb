@@ -33,10 +33,10 @@
 <% certificates.each do |certificate| %>
 
 <% credit_total << certificate.credits.to_i %>
-<% credit_sum = credit_total.reduce(:+) %>
-<h3>Running Credit Total On <%= certificate.date.strftime("%B %e, %Y") %>: <%= credit_sum %></h3>
+<% @credit_sum = credit_total.reduce(:+) %>
 <% end %>
 
+<h3>Total Credits Earned: <%= @credit_sum %></h3>
 <% certificates.each do |certificate| %>
 
 <table>
@@ -44,9 +44,9 @@
     <tr>
       <th>Credits</th>
       <th>Topic</th>
-      <th>Course title</th>
+      <th>Course Title</th>
       <th>Date</th>
-      <th>Credit category</th>
+      <th>Credit Category</th>
       <th></th>
       <th></th>
       <th></th>
