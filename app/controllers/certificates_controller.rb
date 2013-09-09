@@ -25,7 +25,7 @@ class CertificatesController < ApplicationController
   # POST /certificates.json
   def create
     @certificate = Certificate.new(certificate_params)
-
+    @certificate.user_id = current_user.id
     respond_to do |format|
       if @certificate.save
         format.html { redirect_to @certificate, notice: 'Certificate was successfully created.' }

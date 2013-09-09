@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906022558) do
+ActiveRecord::Schema.define(version: 20130909000154) do
 
   create_table "certificates", force: true do |t|
     t.integer  "credits"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20130906022558) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "periods", force: true do |t|
