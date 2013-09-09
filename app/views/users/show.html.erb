@@ -73,7 +73,7 @@
 
 <p>
   <strong>Lic initial date:</strong>
-  <%= @user.lic_initial_date %>
+  <%= @user.lic_initial_date.strftime("%B %e, %Y") %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
