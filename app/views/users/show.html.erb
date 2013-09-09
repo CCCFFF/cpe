@@ -6,8 +6,12 @@
 <h3>Certificates</h3><%= link_to "Add Certificate", new_certificate_url, :class => "btn btn-info" %><%= link_to "Add License Period", new_period_url, :class => "btn btn-info" %>
 
 <% certificates = Certificate.where(:user_id => @user.id) %>
+<% credit_total = [] %>
 <% certificates.each do |certificate| %>
 <table>
+  <% credit_total << certificate.credits.to_i %>
+  <% credit_sum = credit_total.reduce(:+) %>
+  <h3>Total License Period Credits:<%= credit_sum %></h3>
   <thead>
     <tr>
       <th>Credits</th>
