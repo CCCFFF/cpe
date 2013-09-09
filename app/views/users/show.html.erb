@@ -36,7 +36,10 @@
 <% @credit_sum = credit_total.reduce(:+) %>
 <% end %>
 
+<% state = State.find_by(:id => @user.state_id) %>
 <h3>Total Credits Earned: <%= @credit_sum %></h3>
+<% percent = ((@credit_sum.to_i.to_f / state.credit_hours.to_i.to_f) * 100).to_i %>
+<h3>Percent of Required Credits: <%= percent %>%</h3>
 <% certificates.each do |certificate| %>
 
 <table>
