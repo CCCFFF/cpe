@@ -10,6 +10,7 @@ class CertificatesController < ApplicationController
   # GET /certificates/1
   # GET /certificates/1.json
   def show
+    @certificate = Certificate.find_by(params[:id])
   end
 
   # GET /certificates/new

@@ -13,3 +13,8 @@
  *= require bootstrap_overrides
 
  */
+
+.bar {
+  height: 100%;
+  background: blue;
+}
