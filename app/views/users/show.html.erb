@@ -10,19 +10,17 @@
   <% period.each do |per| %>
   <li>
     <h5>Period Ends: <%= per.period_end.strftime("%B %e, %Y") %></h5>
-  <h5> Time Remaining</h5>
+  <h3> Time Remaining</h3>
   <% period_fin = per.period_end.to_i %>
   <% remaining_seconds = period_fin - Time.now.to_i %>
   <% remaining_minutes = remaining_seconds/60 %>
-  Remaining Minutes: <%= remaining_minutes  %>
   <% remaining_hours = remaining_minutes/60 %>
-  Remaining Hours: <%= remaining_hours %>
   <% remaining_days = remaining_hours/24 %>
-  Remaining Days: <%= remaining_days %>
   <% remaining_months = remaining_days/30 %>
-  Remaining Months: <%= remaining_months %>
   <% remaining_weeks = remaining_months*4 %>
-  Remaining Weeks: <%= remaining_weeks %>
+  <strong>Remaining Months:</strong> <%= remaining_months %><br>
+  <strong>Remaining Weeks:</strong> <%= remaining_weeks %><br>
+  <strong>Remaining Days:</strong> <%= remaining_days %>
   </li>
 
 
@@ -64,15 +62,12 @@
   <tbody>
 
       <tr>
-        <td><iframe src="<%= certificate.document.url %>"></iframe></td>
+        <td><%= link_to 'View Certificate', certificate %></td>
         <td><%= certificate.credits %></td>
         <td><%= certificate.topic %></td>
         <td><%= certificate.course_title %></td>
         <td><%= certificate.date.strftime("%B %e, %Y") %></td>
         <td><%= certificate.credit_category %></td>
-        <td><%= link_to 'Show', certificate %></td>
-        <td><%= link_to 'Edit', edit_certificate_path(certificate) %></td>
-        <td><%= link_to 'Destroy', certificate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

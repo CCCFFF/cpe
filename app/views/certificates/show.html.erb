@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to %>
 
 
 <p>
@@ -31,3 +30,5 @@
 
 <%= link_to 'Edit', edit_certificate_path(@certificate) %> |
 <%= link_to 'Back', certificates_path %>
+<%= link_to "Delete", certificate_path, method: "delete"  %><br>
+<iframe src="<%= @certificate.document.url %>"></iframe>
