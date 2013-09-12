@@ -92,17 +92,13 @@
 
 <p>
   <strong>Lic state:</strong>
-  <%= @user.state_id %>
+  <% lic_state = State.find_by(:id => @user.state_id) %>
+  <%= lic_state.name %>
 </p>
 
 <p>
   <strong>Lic number:</strong>
   <%= @user.lic_number %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
 </p>
 
 <p>

@@ -5,4 +5,7 @@ class Certificate < ActiveRecord::Base
       }
 
   validates_attachment :document, content_type: {content_type: ['application/pdf'] }, size: {less_than: 2.megabytes}
+
+
+
 end
