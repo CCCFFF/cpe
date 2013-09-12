@@ -29,7 +29,7 @@ class CertificatesController < ApplicationController
     @certificate.user_id = current_user.id
     respond_to do |format|
       if @certificate.save
-        format.html { redirect_to @certificate, notice: 'Certificate was successfully created.' }
+        format.html { redirect_to user_url(current_user), notice: 'Certificate was successfully created.' }
         format.json { render action: 'show', status: :created, location: @certificate }
       else
         format.html { render action: 'new' }
